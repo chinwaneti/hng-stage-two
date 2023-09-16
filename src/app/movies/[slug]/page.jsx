@@ -50,9 +50,9 @@ export default function Page({ params }) {
   const releaseDate = new Date(details.release_date).toUTCString();
 
   return (
-    <div className="flex md:flex-row border-4 rounded-md items-center md:items-start">
-      <div className="relative flex space-x-2 h-full px-6 py-3">
-        <div className="mt-8 md:mt-0">
+    <div className="flex md:flex-row  rounded-md md:w-full  items-center md:items-start">
+      <div className="relative flex space-x-2 h-full md:px-6 px-2 py-3">
+        <div className="hidden md:block">
           <div className="rounded-r-3xl h-full px-3 border-2 items-center">
             <div className="my-10 flex space-x-3">
               <FaTv size={24} data-testid="tv-icon" />
@@ -88,38 +88,36 @@ export default function Page({ params }) {
           </div>
         </div>
         <div className="w-full h-full">
-          {/* Conditionally render either the image or the embedded video */}
+         
           {showVideo ? (
             <iframe
               width="560"
               height="315"
               src={`https://www.youtube.com/embed/${details.videos.results[0].key}`}
-              frameBorder="0"
               allowFullScreen
-              className="w-[100%] h-[70vh] rounded-3xl ml-2"
+              className="md:w-[100%] w-[100%] md:h-[70vh] h-[70vh] rounded-3xl md:ml-2 ml-0"
             ></iframe>
           ) : (
             <iframe
               width="560"
               height="315"
               src={`https://www.youtube.com/embed/${details.videos.results[0].key}`}
-              frameBorder="0"
               allowFullScreen
-              className="w-[100%] h-[70vh] rounded-3xl ml-2"
+              className="md:w-[100%] w-[100%] md:h-[70vh] h-[80vh] rounded-3xl md:ml-2 ml-0"
               data-testid="video-iframe"
             ></iframe>
           )}
 
           <div className="mt-5">
             <h1 className="text-xl flex-row flex space-x-3 my-5 font-bold">
-              {details.title}
+             <p className=''>{details.title}</p> 
               <ul className="flex ml-3 space-x-3 font-bold text-sm">
                     <ol className="flex space-x-3">
               <li>
-                <span className="font-bold" data-testid="runtime-label"> - Runtime:</span> {runtimeInMinutes} minutes
+                <span className="md:font-bold" data-testid="runtime-label"> </span> {runtimeInMinutes} minutes
               </li>
               <li>
-                <span className="font-bold" data-testid="release-date-label"> - Release Date (UTC):</span> {releaseDate}
+                <span className="md:font-bold " data-testid="release-date-label"></span> {releaseDate}
               </li>
             </ol>
                 {details.genres.map((genre) => (

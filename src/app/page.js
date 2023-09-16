@@ -80,8 +80,8 @@ function MovieList() {
                 className="w-[100%] h-screen"
                 data-testid={`movie-poster-${movie.id}`}
               />
-              <div className="absolute top-[40%] px-10 text-white">
-                <div className="font-bold text-7xl w-full" data-testid={`movie-title-${movie.id}`}>
+              <div className="absolute top-[40%]  px-10 text-white">
+                <div className="font-bold md:text-7xl text-4xl w-full " data-testid={`movie-title-${movie.id}`}>
                   {movie.title}
                 </div>
                 <div className="flex mt-5">
@@ -96,7 +96,7 @@ function MovieList() {
                     {movie.vote_average}
                   </p>
                 </div>
-                <div className="w-[40%] my-5" data-testid={`movie-overview-${movie.id}`}>
+                <div className="md:w-[40%] my-5" data-testid={`movie-overview-${movie.id}`}>
                   {movie.overview}
                 </div>
                 <button
@@ -117,7 +117,7 @@ function MovieList() {
           see more <span><GrFormNext size={25} /></span>
         </p>
       </div>
-      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10">
+      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:p-10 p-3">
         {movies.slice(0, 12).map((movie, index) => (
           <div
             key={movie.id}

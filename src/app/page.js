@@ -76,6 +76,7 @@ function MovieList() {
                 alt={movie.title}
                 width={500}
                 height={500}
+                priority
                 className="w-[100%] h-screen"
                 data-testid={`movie-poster-${movie.id}`}
               />
@@ -120,7 +121,9 @@ function MovieList() {
         {movies.slice(0, 12).map((movie, index) => (
           <div
             key={movie.id}
+            
             className="bg-white p-4 hover:shadow-xl hover:border-2 shadow-md"
+            
             data-testid={`featured-movie-${movie.id}`}
           >
             <div className="relative mb-4">
@@ -130,6 +133,7 @@ function MovieList() {
                   alt={movie.title}
                   width={500}
                   height={750}
+                  priority
                   data-testid={`featured-movie-poster-${movie.id}`}
                 />
               </Link>
